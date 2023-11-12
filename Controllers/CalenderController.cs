@@ -81,17 +81,3 @@ namespace BD_Assignment.Controllers
 
     }
 }
-public class FixedPortLocalServerCodeReceiver : LocalServerCodeReceiver
-{
-    private readonly int fixedPort;
-
-    public FixedPortLocalServerCodeReceiver(int fixedPort)
-    {
-        this.fixedPort = fixedPort;
-    }
-
-    public string GetRedirectUri()
-    {
-        return $"http://localhost:{fixedPort}/authorize/";
-    }
-}

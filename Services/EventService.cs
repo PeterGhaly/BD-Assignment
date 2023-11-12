@@ -116,7 +116,7 @@ namespace BD_Assignment.Services
                     DataStore = new FileDataStore(credPath, true),
                 });
 
-                var codeReceiver = new FixedPortLocalServerCodeReceiver(fixedPort: 12345); // Specify your fixed port here
+                var codeReceiver = new LocalServerCodeReceiver(); // Specify your fixed port here
                 var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver);
 
                 credential = authCode.AuthorizeAsync("user", CancellationToken.None).Result;
